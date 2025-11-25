@@ -34,6 +34,12 @@ namespace pizzarendelo
 			if (chkKukorica.IsChecked == true) feltetek += "Kukorica, ";
 			if (feltetek.EndsWith(", ")) feltetek = feltetek.Substring(0, feltetek.Length - 2);
 			if (string.IsNullOrEmpty(feltetek)) feltetek = "nincs feltét";
+
+			string atvetel = rbHazhoz.IsChecked == true ? "Házhozszállítás" :
+				 rbSzemelyes.IsChecked == true ? "Személyes átvétel" :
+				 "nincs kiválasztva";
+
+			txtOsszegzes.Text = $"Rendelés összegzése:\nTészta: {teszta}\nMéret: {meret}\nFeltétek: {feltetek}\nÁtvétel: {atvetel}";
 		}
 	}
 }
