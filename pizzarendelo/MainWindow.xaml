@@ -6,7 +6,56 @@
         xmlns:local="clr-namespace:pizzarendelo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
 
-    </Grid>
+	<Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<StackPanel Grid.Row="0" Margin="0,5">
+			<TextBlock Text="Válaszd ki a pizza tészta alapját:" FontWeight="Bold"/>
+			<ListBox Name="lstTesztak" Height="60">
+				<ListBoxItem Content="Vékony"/>
+				<ListBoxItem Content="Normál"/>
+				<ListBoxItem Content="Extra vastag"/>
+			</ListBox>
+		</StackPanel>
+
+		<StackPanel Grid.Row="1" Margin="0,5">
+			<TextBlock Text="Válaszd ki a pizza méretét:" FontWeight="Bold"/>
+			<ComboBox Name="cmbMeret" Width="150">
+				<ComboBoxItem Content="Kicsi"/>
+				<ComboBoxItem Content="Közepes"/>
+				<ComboBoxItem Content="Nagy"/>
+			</ComboBox>
+		</StackPanel>
+
+		<StackPanel Grid.Row="2" Margin="0,5">
+			<TextBlock Text="Válaszd ki a feltéteket:" FontWeight="Bold"/>
+			<WrapPanel>
+				<CheckBox Name="chkSajt" Content="Sajt" Margin="5"/>
+				<CheckBox Name="chkSonka" Content="Sonka" Margin="5"/>
+				<CheckBox Name="chkGomba" Content="Gomba" Margin="5"/>
+				<CheckBox Name="chkOliva" Content="Olívabogyó" Margin="5"/>
+				<CheckBox Name="chkKukorica" Content="Kukorica" Margin="5"/>
+			</WrapPanel>
+		</StackPanel>
+
+		<StackPanel Grid.Row="3" Margin="0,5">
+			<TextBlock Text="Hogyan szeretnéd átvenni?" FontWeight="Bold"/>
+			<StackPanel Orientation="Horizontal">
+				<RadioButton Name="rbHazhoz" Content="Házhozszállítás" GroupName="Atvetel" Margin="5"/>
+				<RadioButton Name="rbSzemelyes" Content="Személyes átvétel" GroupName="Atvetel" Margin="5"/>
+			</StackPanel>
+		</StackPanel>
+
+		<StackPanel Grid.Row="4" Margin="0,10">
+			<Button Name="btnRendeles" Content="Rendelés leadása" Width="150" Height="30"/>
+			<TextBlock Name="txtOsszegzes" Text="" Margin="0,10" TextWrapping="Wrap"/>
+		</StackPanel>
+	</Grid>
 </Window>
