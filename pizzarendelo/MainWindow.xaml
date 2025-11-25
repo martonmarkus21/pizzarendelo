@@ -54,7 +54,7 @@
 		</StackPanel>
 
 		<StackPanel Grid.Row="4" Margin="0,10">
-			<Button Name="btnRendeles" Content="Rendelés leadása" Width="150" Height="30"/>
+			<Button Name="btnRendeles" Content="Rendelés leadása" Width="150" Height="30" Click="btnRendeles_Click"/>
 			<TextBlock Name="txtOsszegzes" Text="" Margin="0,10" TextWrapping="Wrap"/>
 		</StackPanel>
 	</Grid>
